@@ -1,0 +1,46 @@
+@use "./../../../../public/styles/colors.scss";
+
+header{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #F9E5EA;
+    backdrop-filter: blur(7px); //desenfoque
+    box-shadow: 0 .4rem .8rem #0005;
+}
+nav{
+    display: flex;
+    gap: 40px;
+}
+
+.usuario{
+    display: flex;
+    gap: 40px  
+}
+
+.cerrar-sesion{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    
+}
+button{
+    display: flex;
+    gap: 40px;
+}
+
+h1 {
+    color: #000000;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  a{
+    font-size: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000000;
+  }

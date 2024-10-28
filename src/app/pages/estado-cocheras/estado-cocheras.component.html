@@ -1,0 +1,57 @@
+<body>
+  
+<main>
+    <table>
+        <thead>
+        <td>Nº</td>
+        <td>Disponibilidad</td>
+        <td>Ingreso</td>
+        <td>Acciones</td>
+    </thead>
+    <div class="diseño-tabla">
+    <tbody>
+        @for (cochera of dataCocherasService.cocheras; track $index) {
+            <tr>
+                <td> {{ cochera.id }} </td>
+                <td>
+                    @if (cochera.deshabilitada) {
+                        <button class="deshabilitada">
+                            Deshabilitada
+                        </button>
+                    } @else if (!cochera.estacionamiento?.horaEgreso && cochera.estacionamiento?.horaIngreso) {
+                        <button (click)="cerrarEstacionamiento(cochera)">
+                            {{ cochera.estacionamiento?.patente }}
+                        </button>
+                    } @else {
+                        <button class="disponible" (click)="abrirEstacionamiento(cochera.id)">
+                            Disponible
+                        </button>
+                    }
+                </td>
+                <td>{{ cochera.descripcion }}</td>
+                <td class="acciones-container"> 
+                    @if (!cochera.estacionamiento?.patente) {
+                    @if(!cochera.deshabilitada){
+                        <button (click)="preguntarDeshabilitarCochera(cochera.id)"><img src="icons/ok.png" alt="Deshabilitar cochera"></button>
+                    } @else {
+                        <button (click)="preguntarHabilitarCochera(cochera.id)"><img src="icons/prohibido.png" alt="Habilitar cochera"></button>
+
+                    }
+                    @if(esAdmin){   
+                        <button (click)="preguntarBorrarCochera(cochera.id)"><img src="icons/contenedor-de-basura.png" alt="Eliminar cochera"></button>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    </div>
+
+</table>
+
+@if(esAdmin){
+    <button (click)="preguntarAgregarCochera()" class="boton-agregar" id="agregar-cochera" >+</button>
+}
+</main>
+</body>

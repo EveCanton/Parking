@@ -1,0 +1,31 @@
+<body>
+
+
+<main>
+    <table>
+        <thead>
+            <th>Identificación</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Actualizar</th>
+        </thead>
+        <div class="diseño-tabla">
+                <tbody>
+                    @for (tarifa of dataTarifasService.tarifas; track $index){
+                    <tr>
+                        <td class="id">{{ tarifa.id }}</td>
+                        <td>{{ tarifa.descripcion }}</td>
+                        <td>{{ tarifa.valor | currency:'ARS' }}</td>
+                        <td>
+                            @if(esAdmin){
+                            <button class="boton-actualizar" (click)="preguntarCambiarTarifa(tarifa.id, nuevoValor)"><img src="icons/cambiar.png" alt="Actualizar Tarifa"></button>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+                </div>
+            </table>
+
+</main>
+</body>
