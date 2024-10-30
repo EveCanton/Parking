@@ -67,6 +67,7 @@ button{
     height: 44px;
     color: rgb(255, 255, 255);
     background-color: colors.$color-uno;
+    cursor: pointer;
     
 }
 a{
@@ -90,4 +91,15 @@ h1{
      1px  1px 0 #000; /* Sombra hacia abajo a la derecha */
 
 }
+button:hover{
+    background-color: colors.$color-tres;
+}
 
+a:hover{
+    color: colors.$color-tres;
+}
+
+
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

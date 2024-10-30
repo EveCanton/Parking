@@ -11,6 +11,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
 
 export const routes: Routes = [
+
     {
         path: "",
         component: DashboardContainerComponent,
@@ -22,11 +23,13 @@ export const routes: Routes = [
             },
             {
                 path: "reportes",
-                component: ReportesComponent
+                component: ReportesComponent,
+                canActivate: [soloAdminGuard]
             },
             {
                 path: "tarifas",
-                component: TarifasComponent
+                component: TarifasComponent,
+                canActivate: [soloLogueadoGuard]
             }
         ]
     },

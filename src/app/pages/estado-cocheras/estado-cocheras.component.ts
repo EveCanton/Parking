@@ -22,8 +22,7 @@ export class EstadoCocherasComponent {
 
   dataCocherasService = inject(DataCocherasService)
 
-  
- 
+
   preguntarAgregarCochera(){
     Swal.fire({
       title: "Nueva cochera?",
@@ -103,7 +102,7 @@ export class EstadoCocherasComponent {
   }
 
   abrirEstacionamiento(idCochera: number) {
-    const idUsuarioIngreso = "ADMIN" 
+    const idUsuarioIngreso = "ADMIN"
     Swal.fire({
       title: "Abrir Cochera",
       html: `<input type="text" id="patente" class="swal2-input" placeholder="Ingrese patente">`,

@@ -21,7 +21,7 @@ export class DataCocherasService {
     await this.getEstacionamientos()
     this.asociarEstacionamientosConCocheras()
   }
- 
+
   async getCocheras(){
     const res = await fetch('http://localhost:4000/cocheras',{
       headers: {
@@ -118,7 +118,7 @@ export class DataCocherasService {
     } else {
       console.warn("Error habilitando cochera")
     };
-  } 
+  }
 
   async abrirEstacionamiento(patente: string, idUsuarioIngreso: string, idCochera: number) {
     const body = {patente, idUsuarioIngreso, idCochera};
