@@ -11,7 +11,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
 
 export const routes: Routes = [
-
     {
         path: "",
         component: DashboardContainerComponent,
@@ -24,7 +23,7 @@ export const routes: Routes = [
             {
                 path: "reportes",
                 component: ReportesComponent,
-                canActivate: [soloAdminGuard]
+                canActivate: [soloLogueadoGuard]
             },
             {
                 path: "tarifas",
@@ -43,7 +42,6 @@ export const routes: Routes = [
         component: RegisterComponent,
         canActivate: [soloPublicoGuard]
     },
-   
     // {
     //     path: "",
     //     redirectTo: "login",
